@@ -15,6 +15,6 @@
 
 * At last admin can end the election and see the result of election.
 
-*** for the website view see the below link:
-    https://ONLINE VOTING APP.onrender.com ***
+***  for the website view see the below link:
+    https://online-voting-04mi.onrender.com/***
 
