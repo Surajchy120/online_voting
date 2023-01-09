@@ -42,7 +42,7 @@ describe("Online voting application", function () {
     res = await agent.post("/admin").send({
       firstName: "suraj",
       lastName: "kushmi",
-      email: "userid1@gmail.com",
+      email: "surajchy@gmail.com",
       password: "12345678",
       _csrf: csrfToken,
     });
@@ -53,7 +53,7 @@ describe("Online voting application", function () {
     const agent = request.agent(server);
     let res = await agent.get("/elections");
     expect(res.statusCode).toBe(302);
-    await login(agent, "userid1@gmail.com", "12345678");
+    await login(agent, "surajchy@gmail.com", "12345678");
     res = await agent.get("/elections");
     expect(res.statusCode).toBe(200);
   });
@@ -69,7 +69,7 @@ describe("Online voting application", function () {
 
   test("Creating a election", async () => {
     const agent = request.agent(server);
-    await login(agent, "userid1@gmail.com", "12345678");
+    await login(agent, "surajchy@gmail.com", "12345678");
     const res = await agent.get("/elections/create");
     const csrfToken = extractCsrfToken(res);
     const response = await agent.post("/elections").send({
@@ -82,7 +82,7 @@ describe("Online voting application", function () {
 
   test("Adding a question", async () => {
     const agent = request.agent(server);
-    await login(agent, "userid1@gmail.com", "12345678");
+    await login(agent, "surajchy@gmail.com", "12345678");
 
     //create new election
     let res = await agent.get("/elections/create");
@@ -114,7 +114,7 @@ describe("Online voting application", function () {
 
   test("Deleting a question", async () => {
     const agent = request.agent(server);
-    await login(agent, "userid1@gmail.com", "12345678");
+    await login(agent, "surajchy@gmail.com", "12345678");
 
     //create new election
     let res = await agent.get("/elections/create");
@@ -185,7 +185,7 @@ describe("Online voting application", function () {
 
   test("Updating a question", async () => {
     const agent = request.agent(server);
-    await login(agent, "userid1@gmail.com", "12345678");
+    await login(agent, "surajchy@gmail.com", "12345678");
 
     //create new election
     let res = await agent.get("/elections/create");
@@ -243,7 +243,7 @@ describe("Online voting application", function () {
 
   test("Adding a option", async () => {
     const agent = request.agent(server);
-    await login(agent, "userid1@gmail.com", "12345678");
+    await login(agent, "surajchy@gmail.com", "12345678");
 
     //create new election
     let res = await agent.get("/elections/create");
@@ -295,7 +295,7 @@ describe("Online voting application", function () {
 
   test("Deleting a option", async () => {
     const agent = request.agent(server);
-    await login(agent, "userid1@gmail.com", "12345678");
+    await login(agent, "surajchy@gmail.com", "12345678");
 
     //create new election
     let res = await agent.get("/elections/create");
@@ -385,7 +385,7 @@ describe("Online voting application", function () {
 
   test("Updating a option", async () => {
     const agent = request.agent(server);
-    await login(agent, "userid1@gmail.com", "12345678");
+    await login(agent, "surajchy@gmail.com", "12345678");
 
     //create new election
     let res = await agent.get("/elections/create");
@@ -462,7 +462,7 @@ describe("Online voting application", function () {
 
   test("Adding a voter", async () => {
     const agent = request.agent(server);
-    await login(agent, "userid1@gmail.com", "12345678");
+    await login(agent, "surajchy@gmail.com", "12345678");
 
     //create new election
     let res = await agent.get("/elections/create");
@@ -494,7 +494,7 @@ describe("Online voting application", function () {
 
   test("Deleting a voter", async () => {
     const agent = request.agent(server);
-    await login(agent, "userid1@gmail.com", "12345678");
+    await login(agent, "surajchy@gmail.com", "12345678");
 
     //create new election
     let res = await agent.get("/elections/create");
@@ -563,7 +563,7 @@ describe("Online voting application", function () {
 
   test("Preview and Launch validation", async () => {
     const agent = request.agent(server);
-    await login(agent, "userid1@gmail.com", "12345678");
+    await login(agent, "surajchy@gmail.com", "12345678");
 
     //create new election
     let res = await agent.get("/elections/create");
@@ -587,7 +587,7 @@ describe("Online voting application", function () {
 
   test("Launch an election", async () => {
     const agent = request.agent(server);
-    await login(agent, "userid1@gmail.com", "12345678");
+    await login(agent, "surajchy@gmail.com", "12345678");
 
     //create new election
     let res = await agent.get("/elections/create");
@@ -671,7 +671,7 @@ describe("Online voting application", function () {
 
   test("Cannot edit questions after launching election", async () => {
     const agent = request.agent(server);
-    await login(agent, "userid1@gmail.com", "12345678");
+    await login(agent, "surajchy@gmail.com", "12345678");
 
     //create new election
     let res = await agent.get("/elections/create");
